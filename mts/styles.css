@@ -1,0 +1,239 @@
+/* Globals */
+body {
+  background: #2f3640;
+  color: #fff;
+  font: 16px 'Open Sans', sans-serif;
+  display: grid;
+  grid-template-areas:
+    'sidebar    header  header'
+    'sidebar    hero    upsell'
+    'sidebar    main    ads'
+    'supplement body    ads'
+    'footer     footer  ads';
+  grid-template-rows: 80px 1fr 1fr;
+  grid-template-columns: 25% 1fr 15%;
+  height: 100vh;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
+a {
+  color: #fbc531;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+p {
+  margin: 0 0 1rem;
+  line-height: 1.75rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 3rem;
+  margin: 0 0 2rem;
+  color: #fff;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 3rem;
+  margin: 0 0 2rem;
+  color: #dcdde1;
+}
+
+/* Containers  */
+
+#header {
+  background: #c23616;
+  overflow: hidden;
+  grid-area: header;
+}
+
+#pageFooter {
+  color: #718093;
+  padding: 4rem;
+  background: #000;
+  grid-area: footer;
+}
+
+#mission {
+  color: #fff;
+  position: relative;
+}
+
+#mission::after {
+  background: rgba(0, 151, 19, 0.1) url('./images/db-equipment.jpg') no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+#main-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+#branding {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #fff;
+  background: #e84118;
+  padding: 1.75rem 3rem;
+}
+
+#mainArticle {
+  grid-area: main;
+}
+#sidebar {
+  grid-area: sidebar;
+  background: rgba(0, 151, 19, 0.1) url('./images/db-rack.jpg') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+#sidebar:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+  opacity: 0.6;
+}
+
+#hero {
+  color: #2f3640;
+  grid-area: hero;
+  background: #dcdde1;
+  text-align: center;
+  padding: 4rem;
+}
+
+#upsell {
+  grid-area: upsell;
+  background: #f5f6fa;
+  color: #353b48;
+  padding: 2rem;
+}
+#supplement {
+  grid-area: supplement;
+  background: #2f3640;
+}
+
+/* utilities */
+
+.hero-focus {
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 4px solid #e84118;
+  padding-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.im-jeff {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 1.5rem 2rem;
+  font-size: 1.5rem;
+  margin: 2rem 0 0 0;
+}
+
+.big {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin: 0 0 2rem;
+  font-weight: 100;
+}
+.purpose {
+  color: #fbc531;
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+.primary {
+  padding: 0.5rem 1rem;
+  margin: 0;
+  outline: 0;
+  background: #00a8ff;
+  border: 0;
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.main-nav-link {
+  color: #fff;
+  padding: 1.75rem 0.5rem 1.75rem 3rem;
+}
+
+.inline {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.content {
+  padding: 4em;
+}
+
+.links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  padding: 4rem;
+  background: #192a56;
+}
+
+.card.alt {
+  background: #273c75;
+}
+
+#siteAds {
+  grid-area: ads;
+}
+
+/* Stack the layout on small devices/viewports. */
+@media all and (max-width: 575px) {
+  body {
+    grid-template-areas:
+      'header'
+      'hero'
+      'main'
+      'ads'
+      'upsell'
+      'sidebar'
+      'footer'
+      'supplement';
+    grid-template-rows: 80px 1fr 1fr 1fr 1fr 0 1fr 0;
+    grid-template-columns: 1fr;
+  }
+}
