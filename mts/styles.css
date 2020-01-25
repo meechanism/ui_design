@@ -5,16 +5,21 @@ body {
   font: 16px 'Open Sans', sans-serif;
   display: grid;
   grid-template-areas:
-    'sidebar    header  header'
-    'sidebar    hero    upsell'
-    'sidebar    main    ads'
-    'supplement body    ads'
-    'footer     footer  footer';
-  grid-template-rows: 80px 1fr 1fr;
-  grid-template-columns: 25% 1fr 15%;
+    'header   header        sidebar'
+    'hero     hero          sidebar'
+    'ads     main          sidebar'
+    'ads      services      services-blk'
+    'ads         service1 supplement1'
+    'ads         service2 supplement2'
+    'ads         service3 supplement3'
+    'ads         service4 supplement4'
+    'footer   footer        footer';
+  grid-template-rows: 80px 1fr;
+  grid-template-columns: 15% 1fr 25%;
   height: 100vh;
   line-height: 1.5rem;
   margin: 0;
+  position: relative;
 }
 
 a {
@@ -33,7 +38,8 @@ button:hover {
 
 p {
   margin: 0 0 1rem;
-  line-height: 1.75rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
 }
 
 h1 {
@@ -43,15 +49,6 @@ h1 {
   line-height: 3rem;
   margin: 0 0 2rem;
   color: #fff;
-}
-
-h3 {
-  font-size: 2.5rem;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 3rem;
-  margin: 0 0 2rem;
-  color: #dcdde1;
 }
 
 /* Containers  */
@@ -88,6 +85,10 @@ h3 {
   position: absolute;
 }
 
+#narrative {
+  background: #dcdde1;
+  color: #2f3640;
+}
 #main-nav {
   height: 100%;
   list-style-type: none;
@@ -105,9 +106,10 @@ h3 {
   padding: 1.75rem 3rem;
 }
 
-#mainArticle {
+#intro {
   grid-area: main;
 }
+
 #sidebar {
   grid-area: sidebar;
   background: rgba(0, 151, 19, 0.1) url('./images/db-rack.jpg') no-repeat;
@@ -140,16 +142,145 @@ h3 {
   color: #353b48;
   padding: 2rem;
 }
-#supplement {
-  grid-area: supplement;
-  background: #2f3640;
+
+/* Services */
+
+#services-blk {
+  grid-area: services-blk;
+  background: #353b48;
 }
 
-#siteAds {
+#services {
+  color: #353b48;
+  grid-area: services;
+  padding: 4rem;
+  background: #dcdde1;
+}
+
+#supplement1 {
+  grid-area: supplement1;
+  position: relative;
+  background: #192a56;
+}
+
+#supplement1::after {
+  background: url('./images/kb-swing.jpg') no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+#supplement2 {
+  grid-area: supplement2;
+  background: #192a56;
+  position: relative;
+}
+
+#supplement2::after {
+  background: url('./images/broccoli-chicken.jpg') no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+#supplement3 {
+  grid-area: supplement3;
+  background: #192a56;
+  position: relative;
+}
+
+#supplement3::after {
+  background: url('./images/dl.jpg') no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+#supplement4 {
+  grid-area: supplement4;
+  background: #192a56;
+  position: relative;
+}
+
+#supplement4::after {
+  background: url('./images/coaching.jpg') center no-repeat;
+  background-size: cover;
+  opacity: 0.15;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+}
+
+#ads {
   grid-area: ads;
+  background: #dcdde1;
+}
+
+#service1 {
+  grid-area: service1;
+}
+
+#service2 {
+  grid-area: service2;
+}
+
+#service3 {
+  grid-area: service3;
+}
+
+/* Mobile menu  */
+#menu-button {
+  display: none;
+}
+
+#mobile-menu {
+  display: absolute;
+  top: 0;
+  left: 0;
+  /* display: none; */
+  height: 100%;
+  width: 100%;
+  background: #fff;
 }
 
 /* utilities */
+
+.coaching-header {
+  color: #273c75 !important;
+}
+.service-header,
+.coaching-header {
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 3rem;
+  margin: 0 0 1rem;
+  color: #dcdde1;
+}
+
+.service-subheader {
+  margin: 0 0 4rem;
+  font-size: 1.5rem;
+  color: #e1b12c;
+}
 
 .hero-focus {
   text-transform: uppercase;
@@ -263,18 +394,106 @@ h3 {
 }
 
 /* Stack the layout on small devices/viewports. */
+
+@media all and (max-width: 1070px) {
+  body {
+    grid-template-areas:
+      'header     '
+      'hero       '
+      'main       '
+      'services   '
+      'service1   '
+      'service2   '
+      'service3   '
+      'service4   '
+      'footer     ';
+    grid-template-rows: 40px 1fr;
+    grid-template-columns: 1fr;
+  }
+  #ads,
+  #sidebar,
+  #supplement1,
+  #supplement2,
+  #supplement3,
+  #supplement4,
+  #services-blk {
+    display: none;
+  }
+
+  .main-nav-link {
+    font-weight: normal;
+  }
+}
+
+@media all and (max-width: 780px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .big {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    margin: 0 0 1.75rem;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin: 0 0 0.75rem;
+  }
+
+  #main-nav {
+    display: none;
+  }
+
+  #header {
+    justify-content: space-between;
+  }
+  #menu-button {
+    display: block;
+    margin: 0;
+    background: #fff;
+    color: #e84118;
+    border: 0;
+    outline: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  #services,
+  #mission,
+  .card {
+    padding: 2rem;
+  }
+  .coaching-header {
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+  }
+  .coaching-sub-header {
+    font-size: 1.25rem;
+  }
+  .service-header {
+    font-size: 1.75rem;
+    margin: 0;
+  }
+  .service-subheader {
+    font-size: 1.25rem;
+    margin: 0 0 2rem;
+  }
+}
+
 @media all and (max-width: 575px) {
   body {
     grid-template-areas:
       'header'
       'hero'
       'main'
-      'ads'
-      'upsell'
-      'sidebar'
-      'footer'
-      'supplement';
-    grid-template-rows: 80px 1fr 1fr 1fr 1fr 0 1fr 0;
+      'services'
+      'service1'
+      'service2'
+      'service3'
+      'service4'
+      'footer';
+    grid-template-rows: 80px 1fr;
     grid-template-columns: 1fr;
   }
 }
