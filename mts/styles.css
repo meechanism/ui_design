@@ -3,23 +3,22 @@ body {
   background: #2f3640;
   color: #fff;
   font: 16px 'Open Sans', sans-serif;
-  display: grid;
-  grid-template-areas:
-    'header   header        sidebar'
-    'hero     hero          sidebar'
-    'ads     main          sidebar'
-    'ads      services      services-blk'
-    'ads         service1 supplement1'
-    'ads         service2 supplement2'
-    'ads         service3 supplement3'
-    'ads         service4 supplement4'
-    'footer   footer        footer';
-  grid-template-rows: 80px 1fr;
-  grid-template-columns: 15% 1fr 25%;
-  height: 100vh;
   line-height: 1.5rem;
   margin: 0;
+  padding: 0;
+}
+
+#grid {
+  display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
   position: relative;
+  grid-template-areas:
+    'hero     hero          sidebar'
+    'ads      mission       sidebar'
+    'ads      services      services-blk';
+  grid-template-rows: 1fr;
+  grid-template-columns: 15% 1fr 25%;
 }
 
 a {
@@ -56,19 +55,19 @@ h1 {
 #header {
   background: #c23616;
   overflow: hidden;
-  grid-area: header;
   display: flex;
   align-items: center;
+  height: 80px;
 }
 
 #pageFooter {
   color: #718093;
   padding: 4rem;
   background: #000;
-  grid-area: footer;
 }
 
 #mission {
+  grid-area: mission;
   color: #fff;
   position: relative;
 }
@@ -106,10 +105,6 @@ h1 {
   padding: 1.75rem 3rem;
 }
 
-#intro {
-  grid-area: main;
-}
-
 #sidebar {
   grid-area: sidebar;
   background: rgba(0, 151, 19, 0.1) url('./images/db-rack.jpg') no-repeat;
@@ -133,7 +128,21 @@ h1 {
   grid-area: hero;
   background: #dcdde1;
   text-align: center;
-  padding: 4rem;
+  height: calc(100vh - 80px);
+  position: relative;
+  min-height: 30rem;
+}
+
+#hero:after {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  right: 0;
+  bottom: 10rem;
+  left: 0;
+  background: center no-repeat
+    url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDY0IDY0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MnB4O308L3N0eWxlPjwvZGVmcz48dGl0bGUvPjxnIGRhdGEtbmFtZT0iTGF5ZXIgMTQiIGlkPSJMYXllcl8xNCI+PHJlY3QgY2xhc3M9ImNscy0xIiBoZWlnaHQ9IjIwIiByeD0iMiIgcnk9IjIiIHdpZHRoPSIxMCIgeD0iMTUiIHk9IjQyIi8+PHJlY3QgY2xhc3M9ImNscy0xIiBoZWlnaHQ9IjIwIiByeD0iMiIgcnk9IjIiIHdpZHRoPSIxMCIgeD0iMzkiIHk9IjQyIi8+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSI0OSA0NyA1MyA0NyA1MyA1NyA0OSA1NyIvPjxwb2x5bGluZSBjbGFzcz0iY2xzLTEiIHBvaW50cz0iNTMgNDkgNTkgNDkgNTkgNTUgNTMgNTUiLz48cG9seWxpbmUgY2xhc3M9ImNscy0xIiBwb2ludHM9IjE1IDQ3IDExIDQ3IDExIDU3IDE1IDU3Ii8+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIxMSA0OSA1IDQ5IDUgNTUgMTEgNTUiLz48bGluZSBjbGFzcz0iY2xzLTEiIHgxPSIyNSIgeDI9IjM5IiB5MT0iNDkiIHkyPSI0OSIvPjxsaW5lIGNsYXNzPSJjbHMtMSIgeDE9IjI1IiB4Mj0iMzkiIHkxPSI1NSIgeTI9IjU1Ii8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNiwySDIyYTAsMCwwLDAsMSwwLDB2OGEwLDAsMCwwLDEsMCwwSDZBNCw0LDAsMCwxLDIsNlY2QTQsNCwwLDAsMSw2LDJaIi8+PHBvbHlsaW5lIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyMiA0IDI4IDQgMjggOCAyMiA4Ii8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNNDUsMzBINjFhMCwwLDAsMCwxLDAsMHY4YTAsMCwwLDAsMSwwLDBINDVhNCw0LDAsMCwxLTQtNHYwQTQsNCwwLDAsMSw0NSwzMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwMiA2OCkgcm90YXRlKDE4MCkiLz48cG9seWxpbmUgY2xhc3M9ImNscy0xIiBwb2ludHM9IjQxIDMyIDM1IDMyIDM1IDM2IDQxIDM2Ii8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjgsNkg1OGE0LDQsMCwwLDEsNCw0aDBhNCw0LDAsMCwxLTQsNEg1YTMsMywwLDAsMC0zLDNIMmEzLDMsMCwwLDAsMywzSDU5YTMsMywwLDAsMSwzLDNoMGEzLDMsMCwwLDEtMywzSDZhNCw0LDAsMCwwLTQsNEgyYTQsNCwwLDAsMCw0LDRIMzUiLz48L2c+PC9zdmc+);
+  opacity: 0.1;
 }
 
 #upsell {
@@ -151,8 +160,8 @@ h1 {
 }
 
 #services {
-  color: #353b48;
   grid-area: services;
+  color: #353b48;
   padding: 4rem;
   background: #dcdde1;
 }
@@ -234,18 +243,6 @@ h1 {
   background: #dcdde1;
 }
 
-#service1 {
-  grid-area: service1;
-}
-
-#service2 {
-  grid-area: service2;
-}
-
-#service3 {
-  grid-area: service3;
-}
-
 /* Mobile menu  */
 #menu-button {
   display: none;
@@ -262,6 +259,14 @@ h1 {
 }
 
 /* utilities */
+
+.center-all {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
 
 .coaching-header {
   color: #273c75 !important;
@@ -398,16 +403,10 @@ h1 {
 @media all and (max-width: 1070px) {
   body {
     grid-template-areas:
-      'header     '
       'hero       '
       'main       '
-      'services   '
-      'service1   '
-      'service2   '
-      'service3   '
-      'service4   '
-      'footer     ';
-    grid-template-rows: 40px 1fr;
+      'services   ';
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
   }
   #ads,
@@ -484,16 +483,10 @@ h1 {
 @media all and (max-width: 575px) {
   body {
     grid-template-areas:
-      'header'
       'hero'
       'main'
-      'services'
-      'service1'
-      'service2'
-      'service3'
-      'service4'
-      'footer';
-    grid-template-rows: 80px 1fr;
+      'services';
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr;
   }
 }
