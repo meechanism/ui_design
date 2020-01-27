@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <meta charset="utf-8" />
   <head>
     <title>Morton Training Systems</title>
     <link
@@ -57,8 +58,8 @@
           <p class="big">Don't see yourself a gym person?</p>
           <p class="big">Don't feel like you belong?</p>
           <p class="big">
-            Especially in the
-            <strong class="hero-focus">free weight</strong> area?
+            ...especially in the
+            <strong>free weight</strong> area?
           </p>
 
           <!-- <section id="upsell">
@@ -69,7 +70,8 @@
     </section> -->
 
           <p class="im-jeff">
-            Hello, I'm <strong>Jeff</strong> and I'm here to help.
+            Hello, I'm <strong class="hero-focus">Jeff Morton</strong> and I'm
+            here to help.
           </p>
         </div>
       </section>
@@ -77,7 +79,7 @@
       <div id="sidebar"></div>
 
       <section id="mission" class="content">
-        <h1>My Mission</h1>
+        <h1 class="mission-header">My Mission</h1>
         <p>I want to help you feel <em class="purpose">comfortable</em>.</p>
         <p>
           I want to help you <em class="purpose">balance your priorities</em>.
@@ -96,36 +98,43 @@
         </p>
       </section>
 
-      <div id="services-blk"></div>
       <div id="services">
-        <section id="coaching">
-          <h1 class="coaching-header">Coaching Services</h1>
-          <h4 class="coaching-sub-header">CHANGE YOUR FITNESS NARRATIVE</h4>
-          <p>
-            I build an environment where exercise and movement empowers you. My
-            core principles promote:
-          </p>
-          <ul>
-            <li>Comfort</li>
-            <li>Safety</li>
-            <li>Tolerance</li>
-          </ul>
-          <p>
-            I'll never ask you to count calories or give up your favorite foods.
-            You'll never stagnate. You'll start to actually crave and look
-            forward to working out. Keeping healthy and fit as you get ulder
-            will become easier and easier.
-          </p>
-        </section>
-        <section id="service1">
-          <div class="card alt">
+        <div id="services-list">
+          <div></div>
+          <section class="content">
+            <h1 class="coaching-header">Coaching Services</h1>
+            <h4 class="coaching-sub-header">CHANGE YOUR FITNESS NARRATIVE</h4>
+            <p>
+              I build an environment where exercise and movement empowers you.
+              My core principles promote:
+            </p>
+            <ul>
+              <li>Comfort</li>
+              <li>Safety</li>
+              <li>Tolerance</li>
+            </ul>
+            <p>
+              I'll never ask you to count calories or give up your favorite
+              foods. You'll never stagnate. You'll start to actually crave and
+              look forward to working out. Keeping healthy and fit as you get
+              ulder will become easier and easier.
+            </p>
+
+            <button class="button button-inline secondary">
+              See all services &raquo;
+            </button>
+          </section>
+          <div></div>
+
+          <div id="supplement1"></div>
+          <a class="card alt">
             <h3 class="service-header">
               ONLINE EXERCISE COACHING
             </h3>
             <h4 class="service-subheader">
               FOR PEOPLE WHO DON’T LIKE TO EXERCISE
             </h4>
-            <p>
+            <p class="service-copy">
               Get strong and fit even if you’re not a gym person. Exercise can
               be something enjoyable, something you actually look forward to.
               Even if right now, the thought of going to the gym or exercising
@@ -134,28 +143,38 @@
               effectively and without injury. More importantly, you’ll enjoy the
               process in a welcoming, judgement-free environment.
             </p>
-          </div>
-        </section>
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                &raquo;
+              </div>
+            </div>
+          </a>
+          <div></div>
 
-        <section id="service2">
-          <div class="card">
+          <div></div>
+          <a class="card">
             <h3 class="service-header">ONLINE NUTRITION COACHING</h3>
             <h4 class="service-subheader">FOR HEALTH AND WEIGHT LOSS</h4>
-            <p>
+            <p class="service-copy">
               Create healthy and lasting food habits even if you’ve never been
               able to keep track calories. Never yoyo or stress about your diet
               again. Whether you want to lose weight for good or finally hear
               some good news about your health from the doctor, this is how you
               get there.
             </p>
-          </div>
-        </section>
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                &raquo;
+              </div>
+            </div>
+          </a>
+          <div id="supplement2"></div>
 
-        <section id="service3">
-          <div class="card alt">
+          <div id="supplement3"></div>
+          <a class="card alt">
             <h3 class="service-header">TOTAL ONLINE FAT LOSS COACHING</h3>
             <h4 class="service-subheader">NUTRITION + EXERCISE COACHING</h4>
-            <p>
+            <p class="service-copy">
               Be the healthiest and leanest you’ve been in years, even if you
               feel like you’ve tried everything and nothing has worked so far.
               You’ll improve your health along with the way your body looks and
@@ -165,14 +184,19 @@
               one of those “healthy/fit” people, but you’ll soon be the one your
               friends turn to for fitness advice.
             </p>
-          </div>
-        </section>
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                &raquo;
+              </div>
+            </div>
+          </a>
+          <div></div>
 
-        <section id="service4">
-          <div class="card">
+          <div></div>
+          <a class="card">
             <h3 class="service-header">DELUXE FAT LOSS COACHING</h3>
             <h4 class="service-subheader">FOR PEOPLE WHO ARE WAY TOO BUSY</h4>
-            <p>
+            <p class="service-copy">
               Having a stressful, exhausting, and hectic work life possesses its
               own set of challenges, but they’re not insurmountable. I’ve helped
               clients just like you tackle these same challenges. Who kept
@@ -182,72 +206,108 @@
               program -- you get everything you need to ensure you get leaner,
               fitter, and more flexible no matter what life throws at you.
             </p>
-          </div>
-        </section>
+            <div class="go-corner" href="#">
+              <div class="go-arrow">
+                &raquo;
+              </div>
+            </div>
+          </a>
+          <div id="supplement4"></div>
+        </div>
       </div>
+
+      <div></div>
+      <section class="content">
+        <h1>Testimonials</h1>
+        <div class="testimonial-list flex">
+          <div class="testimonial">
+            <img class="person" src="./images/zack.jpg" />
+            <div class="testimonial-body">
+              <h5 class="testimonial-header">Zack</h5>
+              <p>
+                He's the last Jedi of personal training, showing you and your
+                body how to use the good side of the Force.
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonial">
+            <img class="person" src="./images/vicki.jpeg" />
+            <div class="testimonial-body">
+              <h5 class="testimonial-header">Vicki</h5>
+              <p>
+                I have achieved better results from Jeff than I have from any
+                other fitness coach I have had in the past.
+              </p>
+            </div>
+          </div>
+        </div>
+        <button class="button button-inline secondary">
+          More Testimonials &raquo;
+        </button>
+      </section>
+      <div></div>
 
       <div id="sidebar"></div>
       <div id="ads"></div>
     </main>
 
-    <footer id="pageFooter">
-      <div class="flex">
-        <section class="footer-section">
-          <h4 class="footer-header">Site</h4>
-          <ul class="links">
-            <li class="block"><a class="li-link" href="/">Home</a></li>
-            <li class="block"><a class="li-link" href="/about">About</a></li>
-            <li class="block">
-              <a class="li-link" href="/contact">Contact</a>
-            </li>
-            <li class="block"><a class="li-link" href="/faqs">FAQs</a></li>
-            <li class="block">
-              <a class="li-link" href="/services">Services</a>
-            </li>
-            <li class="block">
-              <a class="li-link" href="/testimonials">Testimonials</a>
-            </li>
-          </ul>
-        </section>
+    <footer id="footer">
+      <section class="footer-section">
+        <h4 class="footer-header">Site</h4>
+        <ul class="links">
+          <li class="block"><a class="li-link" href="/">Home</a></li>
+          <li class="block"><a class="li-link" href="/about">About</a></li>
+          <li class="block">
+            <a class="li-link" href="/contact">Contact</a>
+          </li>
+          <li class="block"><a class="li-link" href="/faqs">FAQs</a></li>
+          <li class="block">
+            <a class="li-link" href="/services">Services</a>
+          </li>
+          <li class="block">
+            <a class="li-link" href="/testimonials">Testimonials</a>
+          </li>
+        </ul>
+      </section>
 
-        <section class="footer-section">
-          <h4 class="footer-header">Services</h4>
-          <ul class="links">
-            <li class="block">
-              <a class="li-link" href="/">Exercise Coaching</a>
-            </li>
-            <li class="block">
-              <a class="li-link" href="/">Fat Loss Coaching</a>
-            </li>
-            <li class="block">
-              <a class="li-link" href="/">Nutrition Coaching</a>
-            </li>
-            <li class="block">
-              <a class="li-link" href="/">Premium Coaching</a>
-            </li>
-          </ul>
-        </section>
+      <section class="footer-section">
+        <h4 class="footer-header">Services</h4>
+        <ul class="links">
+          <li class="block">
+            <a class="li-link" href="/">Exercise Coaching</a>
+          </li>
+          <li class="block">
+            <a class="li-link" href="/">Fat Loss Coaching</a>
+          </li>
+          <li class="block">
+            <a class="li-link" href="/">Nutrition Coaching</a>
+          </li>
+          <li class="block">
+            <a class="li-link" href="/">Premium Coaching</a>
+          </li>
+        </ul>
+      </section>
 
-        <section class="footer-section">
-          <h4 class="footer-header">Social</h4>
-          <ul class="links">
-            <li>Facebook</li>
-            <li>Youtube</li>
-            <li>Online Certified Trainer</li>
-          </ul>
-        </section>
+      <section class="footer-section">
+        <h4 class="footer-header">Social</h4>
+        <ul class="links">
+          <li>Facebook</li>
+          <li>Youtube</li>
+          <li>Online Certified Trainer</li>
+        </ul>
+      </section>
 
-        <section class="footer-section">
-          <h4 class="footer-header">Legal</h4>
-          <ul class="links">
-            <li class="block"><a class="li-link" href="">Privacy</a></li>
-            <li class="block">
-              <a class="li-link" href="">Terms of Service</a>
-            </li>
-          </ul>
-          <p>&copy; 2020 - Morton Training Systems.</p>
-        </section>
-      </div>
+      <section class="footer-section">
+        <h4 class="footer-header">Legal</h4>
+        <ul class="links">
+          <li class="block"><a class="li-link" href="">Privacy</a></li>
+          <li class="block">
+            <a class="li-link" href="">Terms of Service</a>
+          </li>
+        </ul>
+        <p>&copy; 2020 - Morton Training Systems.</p>
+      </section>
     </footer>
     <script src="./menu.js"></script>
   </body>
