@@ -270,11 +270,11 @@ h1 {
   transform: translateY(-50%);
 }
 
-.coaching-header {
+.alt-header {
   color: #273c75 !important;
 }
 .service-header,
-.coaching-header {
+.alt-header {
   font-size: 2.5rem;
   font-weight: 300;
   font-style: italic;
@@ -285,6 +285,7 @@ h1 {
 
 .service-copy {
   color: #dcdde1;
+  margin: 0 0 4rem;
 }
 .service-subheader {
   margin: 0 0 4rem;
@@ -292,6 +293,11 @@ h1 {
   color: #e1b12c;
 }
 
+.service-button {
+  text-align: right;
+  /* display: inline-block; */
+  font-size: 8rem;
+}
 .hero-focus {
   text-transform: uppercase;
   display: inline-block;
@@ -327,13 +333,14 @@ h1 {
 .button.secondary {
   background: #fff;
   border: #fff;
-  color: #0097e6;
+  color: #e84118;
 }
 
 .button-inline {
   width: inherit !important;
 }
 .button {
+  border-radius: 4px;
   padding: 1rem 1.5rem;
   margin: 0;
   outline: 0;
@@ -412,64 +419,22 @@ h1 {
   background: #273c75;
 }
 
-.go-corner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  transform: skew(6deg);
-  align-items: start;
-  background: #e84118;
-  margin-right: -7rem;
-}
-
-.go-arrow {
-  color: white;
-  font-size: 4rem;
-  margin: 2rem 1rem 0;
-  padding-right: 0.75rem;
-}
-
-.card:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.card:hover .go-corner {
-  margin-right: -2rem;
-}
-.card:hover .go-arrow {
-  opacity: 1;
-}
-
 /* testimonials */
 
 .testimonial-list {
   margin: 0 0 2rem;
 }
-.testimonial-header {
-  font-size: 1rem;
-  margin: 0 0 2rem;
-  line-height: 1rem;
-}
 
 .testimonial-list {
   display: flex;
 }
+
 .testimonial {
-  background: #f5f6fa;
   padding: 0;
   margin: 1rem 0;
-  text-align: center;
   flex: 1;
 }
 
-.testimonial-body {
-  padding: 2rem 2rem 1rem;
-}
 .testimonial:first-child {
   margin-right: 2rem;
 }
@@ -498,6 +463,28 @@ h1 {
 }
 .footer-section {
   padding: 1rem;
+}
+
+/* Quotes  */
+blockquote {
+  background: #f5f6fa;
+  margin: 0;
+  padding: 2rem;
+  line-height: 2rem;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+
+blockquote:before {
+  color: #ccc;
+  content: '\201C';
+  font-size: 4em;
+  line-height: 0.25em;
+  margin-right: 0.1em;
+  vertical-align: -0.4em;
+  font-family: serif;
+}
+blockquote p {
+  display: inline;
 }
 
 /* Stack the layout on small devices/viewports. */
@@ -557,7 +544,7 @@ h1 {
   .card {
     padding: 2rem;
   }
-  .coaching-header {
+  .alt-header {
     margin: 0 0 1rem;
     font-size: 1.75rem;
   }
